@@ -1,0 +1,81 @@
+/* Entire TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Table Column Headers */
+.table-view .column-header-background {
+    -fx-background-color: #f4f8fb;
+    -fx-border-color: #dce3ea;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f4f8fb;
+    -fx-border-color: #dce3ea;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 12 12 0 0;
+    
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 12;
+}
+
+/* Table Cells */
+.table-cell {
+    -fx-padding: 8 12;
+    -fx-border-color: transparent;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Table Row Styling */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f2f2f2 transparent;
+    -fx-padding: 6 0;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #eaf4ff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+}
+
+/* Fake Badge Styling (applies to text content only!) */
+.table-cell:filled {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-cell:filled:focused {
+    -fx-background-color: transparent;
+}
+
+/* Emulate badge colors via content match (optional, subtle effect) */
+.table-cell:filled:selected {
+    -fx-text-fill: white;
+}
+
+/* Scrollbars (optional) */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cfd8dc;
+    -fx-background-radius: 4;
+}
