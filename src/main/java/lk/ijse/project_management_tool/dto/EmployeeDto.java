@@ -20,4 +20,14 @@ public class EmployeeDto {
     private String status;
     private Long teamId;
     private String profile;
+
+    public EmployeeDto(String name, String email, String contact, String address, String role, String password,String profile) {
+        this.name = name;
+        this.email = email;
+        this.contact = contact;
+        this.address = address;
+        this.role = role;
+        this.password = password;
+        this.profile = profile;
+    }
 }

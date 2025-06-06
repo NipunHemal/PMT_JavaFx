@@ -14,6 +14,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
 public class DialogUtil {
+    private static JFXDialog dialog;
+
 
     public enum DialogType {
         INFO, ERROR, CONFIRM, CUSTOM
@@ -30,6 +32,13 @@ public class DialogUtil {
      * @param onCancel Action to run on cancel (null for default close)
      * @param graphic Custom graphic node (null for text message)
      */
+
+    public static void close(){
+        if (dialog != null) {
+            dialog.close();
+        }
+    }
+
     public static void showDialog(
             DialogType type,
             String title,
@@ -77,8 +86,8 @@ public class DialogUtil {
             throw new IllegalStateException("ReferenceUtils.dialogPane is null. Make sure it's initialized.");
         }
 
-        JFXDialog dialog = new JFXDialog(dialogPane, layout, JFXDialog.DialogTransition.CENTER);
-        dialog.setOverlayClose(false); // Prevent closing by clicking outside
+        dialog = new JFXDialog(dialogPane, layout, JFXDialog.DialogTransition.CENTER);
+        dialog.setOverlayClose(true); // Prevent closing by clicking outside
 
         // Create action buttons
         HBox actions = new HBox(10);
@@ -111,8 +120,6 @@ public class DialogUtil {
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
-            } finally {
-                dialog.close();
             }
         });
         if (onConfirm != null) {
@@ -128,11 +135,11 @@ public class DialogUtil {
                 try {
                     if (onCancel != null) {
                         onCancel.run();
+                    } else{
+                        dialog.close();
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
-                } finally {
-                    dialog.close();
                 }
             });
             // Add cancel button first for proper order (Cancel, Confirm)

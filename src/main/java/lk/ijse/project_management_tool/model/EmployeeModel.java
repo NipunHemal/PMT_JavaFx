@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class EmployeeModel {
     public boolean saveEmployee(EmployeeDto employee) throws SQLException, ClassNotFoundException {
-        String sql = "INSERT INTO employee (name, email, contact, address, role, password, status, team_id) VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO employee (name, email, contact, address, role, password,profile ) VALUES (?,?,?,?,?,?,?)";
         return CrudUtil.execute(sql,
                 employee.getName(),
                 employee.getEmail(),
@@ -17,8 +17,7 @@ public class EmployeeModel {
                 employee.getAddress(),
                 employee.getRole(),
                 employee.getPassword(),
-                employee.getStatus(),
-                employee.getTeamId()
+                employee.getProfile()
         );
     }
 

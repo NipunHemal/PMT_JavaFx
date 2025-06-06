@@ -131,9 +131,7 @@
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
-                                        <ComboBox fx:id="roleComboBox" prefWidth="200.0" promptText="Select role" styleClass="modern-combo-box">
-
-                                        </ComboBox>
+                                        <ComboBox fx:id="roleComboBox" prefWidth="200.0" promptText="Select role" styleClass="modern-combo-box" />
                                     </children>
                                 </VBox>
 

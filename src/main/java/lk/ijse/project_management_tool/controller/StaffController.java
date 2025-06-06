@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import lk.ijse.project_management_tool.controller.component.AddStaffController;
 import lk.ijse.project_management_tool.controller.component.StaffCardController;
 import lk.ijse.project_management_tool.dto.EmployeeDto;
 import lk.ijse.project_management_tool.model.EmployeeModel;
@@ -31,6 +32,7 @@ public class StaffController implements Initializable {
 
     private void loadProjects() {
         try{
+            fpnStaffCardContainer.getChildren().clear();
             ArrayList<EmployeeDto> employees = employeeModel.getAllEmployees();
             for (EmployeeDto employee : employees) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Component/StaffCard.fxml"));
@@ -45,11 +47,14 @@ public class StaffController implements Initializable {
 
     public void btnAddStaddOnAction(ActionEvent actionEvent) {
         try{
-            Parent customContent = FXMLLoader.load(getClass().getResource("/view/Component/Forms/AddStaff.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Component/Forms/AddStaff.fxml"));
+            Parent customContent = loader.load();
+            AddStaffController controller = loader.<AddStaffController>getController();
+            controller.init(this);
             DialogUtil.showCustom(null, null, customContent,
-                    "Apply", "Reset",
-                    () -> System.out.println("Applied"),
-                    () -> System.out.println("Reset"));
+                    "Save", "Canal",
+                    () -> controller.saveStaff(),
+                    null);
         } catch (Exception e) {
             e.printStackTrace();
             NotificationUtils.showError("Error Load Dialog", e.getMessage());
