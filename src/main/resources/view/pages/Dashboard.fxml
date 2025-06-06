@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.DashboardController">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" spacing="30.0">
+         <children>
+            <VBox prefWidth="400.0" spacing="20.0">
+               <children>
+                  <VBox spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Circle fill="#f39c12" radius="35.0" />
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Robert Smith" />
+                                    <Label style="-fx-text-fill: #7f8c8d;" text="Product Designer" />
+                                 </children>
+                              </VBox>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <JFXButton style="-fx-text-fill: #7f8c8d;" text="⋯" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="10.0">
+                           <children>
+                              <JFXButton prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-background-radius: 20;" text="✉" />
+                              <JFXButton prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #f8f9fa; -fx-text-fill: #7f8c8d; -fx-background-radius: 20;" text="📞" />
+                              <JFXButton prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #f8f9fa; -fx-text-fill: #7f8c8d; -fx-background-radius: 20;" text="💬" />
+                              <JFXButton prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #f8f9fa; -fx-text-fill: #7f8c8d; -fx-background-radius: 20;" text="📹" />
+                              <Region HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <VBox spacing="15.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Time Slots" />
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <JFXButton style="-fx-background-color: #f8f9fa; -fx-text-fill: #7f8c8d; -fx-background-radius: 8; -fx-padding: 8 15;" text="April, 2024 📅" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <HBox alignment="CENTER" spacing="5.0">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d;" text="Meetings" />
+                                          <Label style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 2 8;" text="3" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;">
+                     <children>
+                        <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Detailed Information" />
+                        <VBox spacing="15.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <Circle fill="#2c3e50" radius="4.0" />
+                                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Full Name" />
+                                          <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Robert Smith" />
+                                       </children>
+                                    </VBox>
+                                    <Label style="-fx-background-color: #e8f8f5; -fx-text-fill: #27ae60; -fx-padding: 3 8; -fx-background-radius: 10; -fx-font-size: 10;" text="Online" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <Circle fill="#7f8c8d" radius="4.0" />
+                                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Email Address" />
+                                          <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="robertsmith64@gmail.com" />
+                                       </children>
+                                    </VBox>
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="✉" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <Circle fill="#7f8c8d" radius="4.0" />
+                                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Contact Number" />
+                                          <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="(555) 555-5674" />
+                                       </children>
+                                    </VBox>
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="📞" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <Circle fill="#7f8c8d" radius="4.0" />
+                                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Designation" />
+                                          <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Product Designer" />
+                                       </children>
+                                    </VBox>
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="ℹ" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children>
+                                    <Circle fill="#7f8c8d" radius="4.0" />
+                                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Availability" />
+                                          <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Schedule the time slot" />
+                                       </children>
+                                    </VBox>
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="📅" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox spacing="20.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <children>
+                        <JFXButton style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 20;" text="Ongoing Projects" />
+                        <JFXButton style="-fx-text-fill: #7f8c8d;" text="⌄" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox spacing="10.0">
+                           <children>
+                              <JFXButton style="-fx-text-fill: #7f8c8d;" text="⊙" />
+                              <JFXButton style="-fx-text-fill: #7f8c8d;" text="🔽" />
+                              <JFXButton style="-fx-text-fill: #7f8c8d;" text="❤" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox prefWidth="200.0" spacing="15.0" style="-fx-background-color: #fff8e1; -fx-background-radius: 15; -fx-padding: 20;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="March 05, 2024" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="⋯" />
+                                 </children>
+                              </HBox>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 16;" text="Web Designing" />
+                                    <Label style="-fx-text-fill: #7f8c8d;" text="Prototyping" />
+                                 </children>
+                              </VBox>
+                              <ProgressBar prefWidth="160.0" progress="0.7" style="-fx-accent: #f39c12;" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-padding: 3 6; -fx-background-radius: 10; -fx-font-size: 10;" text="Progress" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;" text="2 Days Left" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Circle fill="#f39c12" radius="12.0" />
+                                    <Circle fill="#3498db" radius="12.0" />
+                                    <Circle fill="#e74c3c" radius="12.0" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="+" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="200.0" spacing="15.0" style="-fx-background-color: #e3f2fd; -fx-background-radius: 15; -fx-padding: 20;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="March 08, 2024" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="⋯" />
+                                 </children>
+                              </HBox>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 16;" text="Mobile App" />
+                                    <Label style="-fx-text-fill: #7f8c8d;" text="Design" />
+                                 </children>
+                              </VBox>
+                              <ProgressBar prefWidth="160.0" progress="0.9" style="-fx-accent: #3498db;" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 3 6; -fx-background-radius: 10; -fx-font-size: 10;" text="Progress" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;" text="5 Days Left" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Circle fill="#e74c3c" radius="12.0" />
+                                    <Circle fill="#3498db" radius="12.0" />
+                                    <Circle fill="#f39c12" radius="12.0" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="+" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="200.0" spacing="15.0" style="-fx-background-color: #fce4ec; -fx-background-radius: 15; -fx-padding: 20;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="March 12, 2024" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="⋯" />
+                                 </children>
+                              </HBox>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 16;" text="Dashboard" />
+                                    <Label style="-fx-text-fill: #7f8c8d;" text="Wireframe" />
+                                 </children>
+                              </VBox>
+                              <ProgressBar prefWidth="160.0" progress="0.6" style="-fx-accent: #e91e63;" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #e91e63; -fx-text-fill: white; -fx-padding: 3 6; -fx-background-radius: 10; -fx-font-size: 10;" text="Progress" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;" text="8 Days Left" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Circle fill="#9c27b0" radius="12.0" />
+                                    <Circle fill="#3498db" radius="12.0" />
+                                    <Circle fill="#f39c12" radius="12.0" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="+" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox prefWidth="400.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 16;" text="Calendar" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="📅" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="⋯" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="10.0">
+                                 <children>
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="←" />
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 18;" text="March" />
+                                    <JFXButton style="-fx-text-fill: #7f8c8d;" text="→" />
+                                 </children>
+                              </HBox>
+                              <GridPane hgap="5.0" vgap="5.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="S" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="M" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="T" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="W" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="T" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="F" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                                    <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="S" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                                    <JFXButton prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 15;" text="5" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <JFXButton prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 15;" text="12" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <JFXButton prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 15;" text="23" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                    <JFXButton prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #9c27b0; -fx-text-fill: white; -fx-background-radius: 15;" text="27" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 16;" text="Inbox" />
+                                    <Label style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 2 6; -fx-font-size: 10;" text="2" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_LEFT" spacing="10.0">
+                                 <children>
+                                    <Circle fill="#3498db" radius="20.0" />
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                             <children>
+                                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Web Designing" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <JFXButton style="-fx-text-fill: #7f8c8d;" text="📌" />
+                                             </children>
+                                          </HBox>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="Hey tell me about progress of project? Waiting for your response" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_LEFT" spacing="10.0" style="-fx-background-color: #2c3e50; -fx-background-radius: 10; -fx-padding: 15;">
+                                 <children>
+                                    <Circle fill="#f39c12" radius="20.0" />
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                             <children>
+                                                <Label style="-fx-font-weight: bold; -fx-text-fill: white;" text="Stephanie" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <JFXButton style="-fx-text-fill: #7f8c8d;" text="📌" />
+                                             </children>
+                                          </HBox>
+                                          <Label style="-fx-text-fill: #bdc3c7; -fx-font-size: 12;" text="I got your first assignment, It was quite good 😊" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_LEFT" spacing="10.0">
+                                 <children>
+                                    <Circle fill="#e74c3c" radius="20.0" />
+                                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                             <children>
+                                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="William" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <JFXButton style="-fx-text-fill: #7f8c8d;" text="📌" />
+                                             </children>
+                                          </HBox>
+                                          <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;" text="I want some changes in previous work you sent me. Waiting for your reply." />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

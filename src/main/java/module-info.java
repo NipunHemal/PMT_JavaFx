@@ -8,5 +8,8 @@ module lk.ijse.project_management_tool {
 
 
     opens lk.ijse.project_management_tool.controller to javafx.fxml;
+    opens lk.ijse.project_management_tool.controller.auth to javafx.fxml;
+    opens lk.ijse.project_management_tool.controller.layout to javafx.fxml;
+    opens lk.ijse.project_management_tool.controller.component to javafx.fxml;
     exports lk.ijse.project_management_tool;
 }

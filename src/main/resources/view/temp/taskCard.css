@@ -1,0 +1,83 @@
+/* StarCard CSS Styles */
+
+.card-container {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.08), 12, 0, 0, 4);
+    -fx-border-color: #F0F0F0;
+    -fx-border-radius: 16px;
+    -fx-border-width: 1px;
+}
+
+.design-label {
+    -fx-text-fill: white;
+    -fx-background-color: #007AFF;
+    -fx-background-radius: 12px;
+    -fx-padding: 6px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.title-label {
+    -fx-text-fill: #1D1D1F;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-line-spacing: 2px;
+}
+
+.subtitle-label {
+    -fx-text-fill: #8E8E93;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 1px;
+}
+
+.progress-label {
+    -fx-text-fill: #1D1D1F;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+}
+
+.progress-fraction {
+    -fx-text-fill: #1D1D1F;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+}
+
+.month-label {
+    -fx-text-fill: #8E8E93;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+
+.priority-label {
+    -fx-text-fill: #FF3B30;
+    -fx-background-color: #FFEBEA;
+    -fx-background-radius: 12px;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+}
+
+.dot-active {
+    -fx-fill: #007AFF;
+}
+
+.dot-inactive {
+    -fx-fill: #E5E5E5;
+}
+
+.avatar {
+    -fx-fill: #FF6B6B;
+    -fx-stroke: white;
+    -fx-stroke-width: 2px;
+}
+
+.avatar-secondary {
+    -fx-fill: #4ECDC4;
+}
+
+/* Hover effects */
+.card-container:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.12), 16, 0, 0, 6);
+    -fx-cursor: hand;
+}

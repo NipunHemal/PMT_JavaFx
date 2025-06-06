@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+
+<VBox spacing="16" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 6 12; -fx-font-size: 12px; -fx-font-weight: bold;" text="Design" />
+        <VBox spacing="8">
+            <children>
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #111827;" text="High priority mobile app design" wrapText="true" />
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #6B7280;" text="needs to be done quickly" wrapText="true" />
+                <Label style="-fx-font-size: 12px; -fx-text-fill: #9CA3AF;" text="High priority work will be done on health" wrapText="true" />
+            </children>
+        </VBox>
+        <VBox spacing="8">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label style="-fx-font-size: 12px; -fx-text-fill: #6B7280;" text="Progress" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label style="-fx-font-size: 12px; -fx-text-fill: #6B7280; -fx-font-weight: bold;" text="2/10" />
+                    </children>
+                </HBox>
+                <ProgressBar prefHeight="6" prefWidth="280" progress="0.57" />
+            </children>
+        </VBox>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <children>
+                <HBox spacing="6">
+                    <children>
+                        <Circle radius="4" style="-fx-fill: #D1D5DB;" />
+                        <Circle radius="4" style="-fx-fill: #D1D5DB;" />
+                    </children>
+                </HBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label style="-fx-font-size: 11px; -fx-text-fill: #9CA3AF;" text="Nov" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <children>
+                <HBox spacing="-8">
+                    <children>
+                        <Circle radius="14" style="-fx-fill: #EF4444; -fx-stroke: white; -fx-stroke-width: 2;" />
+                        <Circle radius="14" style="-fx-fill: #10B981; -fx-stroke: white; -fx-stroke-width: 2;" />
+                    </children>
+                </HBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="High">
+                    <styleClass>
+                        <String fx:value="badge" />
+                        <String fx:value="success" />
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,6 +1,11 @@
+/* ========== Base Reset and Defaults ========== */
 
+.root {
+    -fx-background-color: #ffffff;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
 
-/* text field css */
+/* ========== Text Field Styles ========== */
 
 .txt-input {
     -fx-background-color: #ffffff;
@@ -16,37 +21,31 @@
 }
 
 .txt-input:focused {
-    -fx-border-color: #2980b9; /* bright blue */
-    -fx-background-color: #ffffff;
+    -fx-border-color: #2980b9;
     -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.15), 4, 0.3, 0, 1);
 }
 
-/* Optional hover effect */
 .txt-input:hover {
     -fx-border-color: #74b9ff;
 }
 
-/* Additional class: error state */
 .txt-input.error {
     -fx-border-color: #e74c3c;
     -fx-background-color: #fff5f5;
     -fx-text-fill: #c0392b;
 }
 
-/* Success state */
 .txt-input.success {
     -fx-border-color: #2ecc71;
     -fx-background-color: #f0fff5;
     -fx-text-fill: #27ae60;
 }
 
-/*  button styles   */
+/* ========== Button Styles ========== */
 
-/* Base button style */
 .btn {
     -fx-background-color: #e0e0e0;
     -fx-text-fill: #2c3e50;
-    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     -fx-font-size: 14px;
     -fx-font-weight: 500;
     -fx-background-radius: 6;
@@ -56,7 +55,6 @@
     -fx-border-color: transparent;
 }
 
-/* Hover and focus effect for all buttons */
 .btn:hover {
     -fx-background-color: #d5d5d5;
 }
@@ -65,7 +63,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0.3, 0, 1);
 }
 
-/* Size Variants */
+/* Button Sizes */
 .btn-sm {
     -fx-font-size: 12px;
     -fx-padding: 4 10;
@@ -76,7 +74,7 @@
     -fx-padding: 10 20;
 }
 
-/* Primary action */
+/* Button Variants */
 .btn.primary {
     -fx-background-color: #4a90e2;
     -fx-text-fill: white;
@@ -86,7 +84,6 @@
     -fx-background-color: #3a7fd4;
 }
 
-/* Danger */
 .btn.danger {
     -fx-background-color: #e74c3c;
     -fx-text-fill: white;
@@ -96,7 +93,6 @@
     -fx-background-color: #c0392b;
 }
 
-/* Success */
 .btn.success {
     -fx-background-color: #2ecc71;
     -fx-text-fill: white;
@@ -106,7 +102,6 @@
     -fx-background-color: #27ae60;
 }
 
-/* Outline */
 .btn.outline {
     -fx-background-color: transparent;
     -fx-border-color: #4a90e2;
@@ -117,20 +112,267 @@
     -fx-background-color: #eaf3fd;
 }
 
-/*background colour style */
+/* ========== Header Buttons ========== */
 
-.bg-dark{
+.btn.header {
+    -fx-text-fill: #2c3e50;
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-font-size: 15px;
+    -fx-font-family: "System";
+    -fx-effect: null;
+}
+
+.btn.header > Text,
+.btn.header > Text-flow > Text {
+    -fx-fill: #7f8c8d;
+    -fx-font-size: 15px;
+}
+
+.btn.header:hover {
+    -fx-text-fill: #1a252f;
+    -fx-background-color: #dce1e3;
+}
+
+.btn.header:hover > Text,
+.btn.header:hover > Text-flow > Text {
+    -fx-fill: #34495e;
+}
+
+.btn.header.active,
+.btn.header:focused {
+    -fx-text-fill: #ecf0f1;
     -fx-background-color: #2c3e50;
 }
 
-.bg-light{
+.btn.header.active > Text,
+.btn.header:focused > Text,
+.btn.header.active > Text-flow > Text,
+.btn.header:focused > Text-flow > Text {
+    -fx-fill: #ecf0f1;
+}
+
+.btn.header.icon-only {
+    -fx-padding: 10 10;
+}
+
+.btn.header.icon-only:not(:focused):focused {
+    -fx-text-fill: #2c3e50;
     -fx-background-color: #ecf0f1;
 }
 
-.bg-grey{
+/* ========== Backgrounds ========== */
+
+.bg-dark {
+    -fx-background-color: #2c3e50;
+}
+
+.bg-light {
+    -fx-background-color: #ecf0f1;
+}
+
+.bg-grey {
     -fx-background-color: #95a5a6;
 }
 
-.bg-white{
+.bg-white {
     -fx-background-color: #ffffff;
+}
+
+/* ========== Border Radius Helpers ========== */
+
+.rounded {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.rounded-sm {
+    -fx-background-radius: 7.5px;
+    -fx-border-radius: 7.5px;
+}
+
+.rounded-lg {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.rounded-full {
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+}
+
+/* ========== Card Style ========== */
+
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0.5, 0, 2);
+    -fx-padding: 15;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.6, 0, 3);
+}
+
+.card .title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.card .subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.card .progress-container {
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+}
+
+.card .progress-label {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 13px;
+}
+
+.badge {
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: #9CA3AF;
+    -fx-background-radius: 4;
+    -fx-padding: 3 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-cursor: default;
+}
+
+/* Hover effect for default badge */
+.badge:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Success badge */
+.badge.success {
+    -fx-background-color: #e2ffe3;
+    -fx-text-fill: #2ecc71;
+}
+
+.badge.success:hover {
+    -fx-background-color: #d8ffd9;
+}
+
+/* Warning badge */
+.badge.warning {
+    -fx-background-color: #ffecee;
+    -fx-text-fill: #e74c3c;
+}
+
+.badge.warning:hover {
+    -fx-background-color: #f1c40f;
+}
+
+/* Info badge */
+.badge.info {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.badge.info:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Danger badge */
+.badge.danger {
+    -fx-background-color: #ffecee;
+    -fx-text-fill: #e74c3c;
+}
+
+.badge.danger:hover,
+.badge.danger:focused {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.progress-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 5 0 2 0;
+}
+
+.progress-bar-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 15;
+    -fx-padding: 2;
+    -fx-pref-height: 20px;
+}
+
+.progress-bar-container .track {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 3;
+}
+
+.progress-bar-container .bar {
+    -fx-background-color: black;
+    -fx-background-radius: 3;
+}
+
+/* separatoer style */
+
+/* Base Separator */
+.separator {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.separator > .line {
+    -fx-background-color: #dcdcdc; /* Light gray line */
+    -fx-padding: 0;
+}
+
+/* Thin separator */
+.separator.thin > .line {
+    -fx-background-color: #eaeaea;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+}
+
+/* Dashed separator */
+.separator.dashed > .line {
+    -fx-background-color: transparent;
+    -fx-border-style: dashed;
+    -fx-border-width: 1px;
+    -fx-border-color: #dcdcdc;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+}
+
+/* Vertical separator (useful in HBox) */
+.separator.vertical {
+    -fx-orientation: vertical;
+    -fx-min-width: 1px;
+    -fx-max-width: 1px;
+}
+
+.separator.red > .line {
+    -fx-background-color: #ff0000;
+}
+
+.separator.green > .line {
+    -fx-background-color: #00ff4a;
+}
+
+.separator.blue > .line {
+    -fx-background-color: #0032ff;
+}
+
+.separator.yellow > .line {
+    -fx-background-color: #ffdd00;
+}
+
+.separator.black> .line {
+    -fx-background-color: #000000;
 }

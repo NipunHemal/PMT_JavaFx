@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefWidth="1200.0" styleClass="main-background" stylesheets="@../../css/staff-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.StaffController">
+    <children>
+        <BorderPane layoutX="20.0" layoutY="20.0" stylesheets="@../../css/main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox spacing="10.0" style="-fx-background-color: #ffffff; -fx-padding: 10;" styleClass="rounded-lg" BorderPane.alignment="CENTER">
+                    <children>
+                        <!-- Header Section -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <VBox />
+                                <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#btnAddStaddOnAction" styleClass="add-button" text="+" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Filter Section -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="filter-container">
+                            <children>
+                                <fx:define>
+                                    <ToggleGroup />
+                                </fx:define>
+                                <ToggleButton mnemonicParsing="false" selected="true" styleClass="filter-button, filter-button-active" text="All">
+                                    <graphic>
+                                        <Label fx:id="allCountLabel" styleClass="filter-count" text="85" />
+                                    </graphic>
+                           <toggleGroup>
+                              <ToggleGroup />
+                           </toggleGroup>
+                                </ToggleButton>
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Started">
+                                    <graphic>
+                                        <Label fx:id="startedCountLabel" styleClass="filter-count" text="39" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Approval">
+                                    <graphic>
+                                        <Label fx:id="approvalCountLabel" styleClass="filter-count" text="15" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Completed">
+                                    <graphic>
+                                        <Label fx:id="completedCountLabel" styleClass="filter-count" text="34" />
+                                    </graphic>
+                                </ToggleButton>
+                                <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button mnemonicParsing="false" styleClass="action-button" text="≡" />
+                                        <Button mnemonicParsing="false" styleClass="action-button" text="☰" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+                <!-- Scrollable FlowPane Container -->
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+                    <content>
+                        <FlowPane fx:id="fpnStaffCardContainer" alignment="CENTER" columnHalignment="CENTER" hgap="25.0" orientation="HORIZONTAL" prefWrapLength="1200.0" rowValignment="TOP" style="-fx-background-color: #f8f9fa; -fx-padding: 30;" vgap="25.0" />
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

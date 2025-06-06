@@ -1,0 +1,46 @@
+package lk.ijse.project_management_tool.controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import lk.ijse.project_management_tool.utils.ReferenceUtils;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginController implements Initializable {
+    public StackPane dialpgPane;
+    public AnchorPane mainContainer;
+    public TextField txtUserName;
+    public PasswordField txtPassword;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ReferenceUtils.dialogPane = dialpgPane;
+    }
+
+    public void btnLogin(ActionEvent actionEvent) {
+
+    }
+
+    void loader(String fxml) {
+        try {
+            mainContainer.getChildren().clear();
+            AnchorPane pane  = FXMLLoader.load(getClass().getResource(fxml));
+            pane.prefWidthProperty().bind(mainContainer.widthProperty());
+            pane.prefHeightProperty().bind(mainContainer.heightProperty());
+
+
+            mainContainer.getChildren().add(pane);
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+}

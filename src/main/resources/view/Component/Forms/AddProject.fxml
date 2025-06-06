@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" fillWidth="false" minWidth="500.0" prefWidth="500.0" stylesheets="@../../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddStaffController">
+   <children>
+      <VBox prefWidth="400.0" spacing="18.0" styleClass="form-fields">
+         <children>
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="field-label" text="Project Name *">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField" promptText="Project name" styleClass="modern-text-field">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="field-label" text="Start Date *">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <DatePicker promptText="Start Date" styleClass="modern-date-picker" />
+               </children>
+            </VBox>
+            <Label styleClass="field-label" text="End Date *">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <VBox spacing="5.0">
+               <children>
+                  <DatePicker promptText="End Date" styleClass="modern-date-picker" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="field-label" text="Description">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="addressField" prefRowCount="3" promptText="Enter address" styleClass="modern-text-area" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="field-label" text="Duration *">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField1" promptText="Project name" styleClass="modern-text-field">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="field-label" text="Select Team *">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="roleComboBox" prefWidth="200.0" promptText="Select the team" styleClass="modern-combo-box" />
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,198 @@
+/* Main Styles */
+.main-container {
+    -fx-background-color: #f5f7fa;
+}
+
+.header {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.user-login {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-padding: 0 0 10 0;
+}
+
+.current-datetime {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* Card Styles */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+    -fx-padding: 15px;
+    -fx-spacing: 15;
+}
+
+/* Button Styles */
+.back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.back-button:hover {
+    -fx-text-fill: #2d8cff;
+}
+
+.notification-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.notification-button:hover {
+    -fx-opacity: 0.8;
+}
+
+/* User Profile Styles */
+.user-profile {
+    -fx-spacing: 10;
+    -fx-padding: 5;
+    -fx-cursor: hand;
+}
+
+.doctor-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Patient Profile Styles */
+.patient-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.patient-age {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.update-button {
+    -fx-background-color: #4cd964;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-margin-top: 10px;
+}
+
+.update-button:hover {
+    -fx-background-color: #3cba54;
+}
+
+/* Information Section Styles */
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.info-section {
+    -fx-padding: 15 0 0 0;
+}
+
+.info-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.info-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+/* Vital Signs Styles */
+.vital-card {
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+.vital-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-padding: 5 0 0 0;
+}
+
+.vital-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.vital-unit {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-padding: 0 0 0 2;
+    -fx-alignment: bottom-left;
+}
+
+/* Test Reports Styles */
+.reports-container {
+    -fx-padding: 15 0 0 0;
+    -fx-spacing: 20;
+}
+
+.report-card {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-pref-width: 200px;
+}
+
+.report-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.report-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #999999;
+}
+
+/* Prescription Styles */
+.add-prescription-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4cd964;
+    -fx-cursor: hand;
+}
+
+.add-prescription-button:hover {
+    -fx-opacity: 0.8;
+}
+
+.prescription-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+
+.prescription-table .column-header {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-padding: 10px 0;
+    -fx-border-color: transparent transparent #eeeeee transparent;
+}
+
+.prescription-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #f5f5f5 transparent;
+    -fx-padding: 10px 0;
+}

@@ -1,0 +1,217 @@
+/* Main Colors */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f5f7fa;
+}
+
+.main-background {
+    -fx-background-color: #f5f7fa;
+}
+
+.transparent-background {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+/* Header Styles */
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.header-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* Button Styles */
+.add-button {
+    -fx-background-color: #00b8d4;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 12px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.action-button {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+/* Icon styling */
+.icon-text {
+    -fx-font-size: 20px;
+}
+
+.icon-small {
+    -fx-font-size: 12px;
+}
+
+/* Filter Section */
+.filter-container {
+    -fx-padding: 5px 0;
+}
+
+.filter-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 12px;
+    -fx-text-fill: #666666;
+}
+
+.filter-button-active {
+    -fx-background-color: #e0f7fa;
+    -fx-border-color: #80deea;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #00acc1;
+}
+
+.filter-count {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 4px;
+    -fx-padding: 2px 6px;
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+    -fx-translate-x: 5px;
+}
+
+/* Project Cards */
+.project-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-padding: 20px;
+    -fx-pref-width: 250px;
+}
+
+.card-icon-container {
+    -fx-background-radius: 50%;
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-max-width: 50px;
+    -fx-max-height: 50px;
+    -fx-alignment: center;
+    -fx-margin-bottom: 15px;
+}
+
+.card-icon-container > ImageView {
+
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+}
+
+.pink-bg {
+    -fx-background-color: #ff4081;
+}
+
+.green-bg {
+    -fx-background-color: #00e676;
+}
+
+.blue-bg {
+    -fx-background-color: #2979ff;
+}
+
+.orange-bg {
+    -fx-background-color: #ff9100;
+}
+
+.purple-bg {
+    -fx-background-color: #aa00ff;
+}
+
+.card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 0 5px 0;
+}
+
+.card-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+}
+
+.section-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px 0;
+}
+
+.progress-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.progress-bar-container {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 10px;
+    -fx-pref-height: 6px;
+}
+
+.progress-bar {
+    -fx-background-radius: 10px;
+    -fx-pref-height: 6px;
+}
+
+.progress-24 {
+    -fx-background-color: #ff4081;
+    -fx-pref-width: 24%;
+}
+
+.progress-65 {
+    -fx-background-color: #aa00ff;
+    -fx-pref-width: 65%;
+}
+
+.progress-67 {
+    -fx-background-color: #2979ff;
+    -fx-pref-width: 67%;
+}
+
+.progress-75 {
+    -fx-background-color: #00e676;
+    -fx-pref-width: 75%;
+}
+
+.progress-90 {
+    -fx-background-color: #ff9100;
+    -fx-pref-width: 90%;
+}
+
+.progress-95 {
+    -fx-background-color: #ff9100;
+    -fx-pref-width: 95%;
+}
+
+/* ScrollPane customization */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.custom-progress-bar {
+    -fx-accent: #00e676; /* blue color */
+    -fx-background-color: transparent;
+    -fx-background-radius: 15;
+    -fx-padding: 2;
+    -fx-pref-height: 16px;
+    -fx-border-width: 0px;
+    -fx-border-color: transparent;
+}

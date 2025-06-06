@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane stylesheets="@../../css/layout/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.layout.DashboardLayoutController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <!-- Sidebar -->
+                <VBox alignment="CENTER" fillWidth="false" maxHeight="200.0" spacing="20.0" style="-fx-background-color: #ecf0f1; -fx-border-radius: 100px; -fx-background-radius: 100px;" BorderPane.alignment="CENTER">
+
+                    <!-- Navigation Icons -->
+                    <VBox alignment="CENTER" spacing="15.0">
+                        <JFXButton onAction="#btnDashboardOnAction">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="📄" />
+                     </graphic></JFXButton>
+                        <JFXButton onAction="#btnProjectOnAction">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⬇" />
+                     </graphic></JFXButton>
+                        <JFXButton onAction="#btnProfileOnAction">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⭐" />
+                     </graphic></JFXButton>
+                        <JFXButton onAction="#btnStaffOnAction">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="👥" />
+                     </graphic></JFXButton>
+                        <JFXButton>
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="❤" />
+                     </graphic></JFXButton>
+                  <JFXButton onAction="#btnTaskOnAction">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                     </styleClass>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="✅" />
+                     </graphic>
+                  </JFXButton>
+                    </VBox>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </padding>
+                </VBox>
+            </left>
+
+            <center>
+                <!-- Main Content -->
+                <VBox spacing="0.0" style="-fx-background-color: #f5f5f5;">
+
+                    <!-- Main Dashboard Content -->
+                    <ScrollPane fitToWidth="true" style="-fx-background: #f5f5f5; -fx-background-color: #f5f5f5;">
+                        <VBox spacing="20.0" style="-fx-background-color: #f5f5f5;">
+                            <padding>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </padding>
+                     <StackPane fx:id="breadcrumbContainer">
+                        <children>
+      
+                                  <!-- Profile Header -->
+                                  <HBox alignment="CENTER_LEFT" minHeight="30.0" minWidth="30.0" spacing="20.0">
+                                      <JFXButton prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #2c3e50;">
+                                 <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/icons/arrow-right.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="header-btn" />
+                                    <String fx:value="icon-only" />
+                                    <String fx:value="not-focused" />
+                                 </styleClass>
+                              </JFXButton>
+                                      <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="My Profile" />
+                                      <HBox alignment="CENTER" spacing="10.0">
+                                          <Label style="-fx-text-fill: #7f8c8d;" text="March, 2024" />
+                                      </HBox>
+                                  </HBox>
+                        </children>
+                     </StackPane>
+                     <AnchorPane fx:id="dashboardContainer" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </ScrollPane>
+                </VBox>
+            </center>
+         <top>
+
+                    <!-- Top Navigation Bar -->
+                 <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-padding: 0 30;" BorderPane.alignment="CENTER">
+                     <HBox alignment="CENTER_LEFT" spacing="15.0" HBox.hgrow="ALWAYS">
+                         <JFXButton minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #2c3e50;" text="☰">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                        <String fx:value="not-focused" />
+                     </styleClass></JFXButton>
+                         <JFXButton minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #2c3e50;" text="📋">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                        <String fx:value="not-focused" />
+                     </styleClass></JFXButton>
+                     </HBox>
+               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+
+                        <!-- Center Navigation -->
+<!--                     <HBox alignment="CENTER" spacing="30.0">-->
+<!--                         <JFXButton style="-fx-text-fill: #7f8c8d;" text="🏠 Home" />-->
+<!--                         <JFXButton style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 20;" text="📁 Projects" />-->
+<!--                         <JFXButton style="-fx-text-fill: #7f8c8d;" text="📄 Invoices" />-->
+<!--                         <JFXButton style="-fx-text-fill: #7f8c8d;" text="⚙ Settings" />-->
+<!--                     </HBox>-->
+                     <HBox alignment="CENTER" spacing="30.0">
+                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Home">
+                             <graphic>
+                                 <Text text="🏠" />
+                             </graphic>
+                         </JFXButton>
+
+                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Projects">
+                             <graphic>
+                                 <Text text="📁" />
+                             </graphic>
+                         </JFXButton>
+
+                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Invoices">
+                             <graphic>
+                                 <Text text="📄" />
+                             </graphic>
+                         </JFXButton>
+
+                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Settings">
+                             <graphic>
+                                 <Text text="⚙" />
+                             </graphic>
+                         </JFXButton>
+                     </HBox>
+               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+
+                        <!-- Right Icons -->
+                     <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                         <JFXButton minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #7f8c8d;" text="✉">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                        <String fx:value="not-focused" />
+                     </styleClass></JFXButton>
+                         <JFXButton minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #7f8c8d;" text="🔔">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                        <String fx:value="not-focused" />
+                     </styleClass></JFXButton>
+                         <JFXButton minHeight="30.0" minWidth="30.0" prefHeight="40.0" prefWidth="40.0" style="-fx-text-fill: #7f8c8d;" text="🔍">
+                     <styleClass>
+                        <String fx:value="header-btn" />
+                        <String fx:value="icon-only" />
+                        <String fx:value="not-focused" />
+                     </styleClass></JFXButton>
+                         <Circle fill="#f39c12" radius="18.0" />
+                     </HBox>
+                 </HBox>
+         </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
