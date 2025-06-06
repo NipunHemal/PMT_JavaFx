@@ -9,83 +9,99 @@ import java.util.ArrayList;
 
 public class TaskModel {
     public boolean saveTask(TaskDto task) throws SQLException, ClassNotFoundException {
-        String sql = "INSERT INTO tasks (project_id, note, start_date, deadline, status) VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO tasks (title, description, status, project_id, project_name, progress, tag) VALUES (?,?,?,?,?,?,?)";
         return CrudUtil.execute(sql,
+                task.getTitle(),
+                task.getDescription(),
+                task.getStatus(),
                 task.getProjectId(),
-                task.getNote(),
-                task.getStartDate(),
-                task.getDeadline(),
-                task.getStatus()
-        );
+                task.getProjectName(),
+                task.getProgress(),
+                task.getTag());
     }
 
     public boolean updateTask(TaskDto task) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE tasks SET project_id=?, note=?, start_date=?, deadline=?, status=? WHERE task_id=?";
+        String sql = "UPDATE tasks SET title=?, description=?, status=?, project_id=?, project_name=?, progress=?, tag=? WHERE id=?";
         return CrudUtil.execute(sql,
-                task.getProjectId(),
-                task.getNote(),
-                task.getStartDate(),
-                task.getDeadline(),
+                task.getTitle(),
+                task.getDescription(),
                 task.getStatus(),
-                task.getTaskId()
-        );
+                task.getProjectId(),
+                task.getProjectName(),
+                task.getProgress(),
+                task.getTag(),
+                task.getId());
     }
 
     public boolean deleteTask(Long taskId) throws SQLException, ClassNotFoundException {
-        String sql = "DELETE FROM tasks WHERE task_id=?";
+        String sql = "DELETE FROM tasks WHERE id=?";
         return CrudUtil.execute(sql, taskId);
     }
 
     public ArrayList<TaskDto> getAllTasks() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM tasks";
+        String sql = "SELECT t.*, p.name as project_name FROM tasks t LEFT JOIN projects p ON t.project_id = p.project_id";
         ResultSet resultSet = CrudUtil.execute(sql);
         ArrayList<TaskDto> tasks = new ArrayList<>();
 
         while (resultSet.next()) {
             tasks.add(new TaskDto(
-                    resultSet.getLong("task_id"),
+                    resultSet.getLong("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("description"),
+                    resultSet.getString("status"),
                     resultSet.getLong("project_id"),
-                    resultSet.getString("note"),
-                    resultSet.getString("start_date"),
-                    resultSet.getDate("deadline"),
-                    resultSet.getString("status")
-            ));
+                    resultSet.getString("project_name"),
+                    resultSet.getInt("progress"),
+                    resultSet.getString("tag"),
+                    resultSet.getDate("created_at"),
+                    resultSet.getDate("updated_at")));
         }
         return tasks;
     }
 
     public TaskDto getTaskById(Long taskId) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM tasks WHERE task_id=?";
+        String sql = "SELECT t.*, p.name as project_name FROM tasks t LEFT JOIN projects p ON t.project_id = p.project_id WHERE t.id=?";
         ResultSet resultSet = CrudUtil.execute(sql, taskId);
 
         if (resultSet.next()) {
             return new TaskDto(
-                    resultSet.getLong("task_id"),
+                    resultSet.getLong("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("description"),
+                    resultSet.getString("status"),
                     resultSet.getLong("project_id"),
-                    resultSet.getString("note"),
-                    resultSet.getString("start_date"),
-                    resultSet.getDate("deadline"),
-                    resultSet.getString("status")
-            );
+                    resultSet.getString("project_name"),
+                    resultSet.getInt("progress"),
+                    resultSet.getString("tag"),
+                    resultSet.getDate("created_at"),
+                    resultSet.getDate("updated_at"));
         }
         return null;
     }
 
     public ArrayList<TaskDto> getTasksByProjectId(Long projectId) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM tasks WHERE project_id=?";
+        String sql = "SELECT t.*, p.name as project_name FROM tasks t LEFT JOIN projects p ON t.project_id = p.project_id WHERE t.project_id=?";
         ResultSet resultSet = CrudUtil.execute(sql, projectId);
         ArrayList<TaskDto> tasks = new ArrayList<>();
 
         while (resultSet.next()) {
             tasks.add(new TaskDto(
-                    resultSet.getLong("task_id"),
+                    resultSet.getLong("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("description"),
+                    resultSet.getString("status"),
                     resultSet.getLong("project_id"),
-                    resultSet.getString("note"),
-                    resultSet.getString("start_date"),
-                    resultSet.getDate("deadline"),
-                    resultSet.getString("status")
-            ));
+                    resultSet.getString("project_name"),
+                    resultSet.getInt("progress"),
+                    resultSet.getString("tag"),
+                    resultSet.getDate("created_at"),
+                    resultSet.getDate("updated_at")));
         }
         return tasks;
     }
-} 
+
+    public boolean updateTaskStatus(Long taskId, String status) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE tasks SET status=? WHERE id=?";
+        return CrudUtil.execute(sql, status, taskId);
+    }
+}
