@@ -27,12 +27,12 @@
                                 <!-- All Projects -->
                                 <VBox alignment="CENTER" spacing="5.0">
                                     <children>
-                                        <Label text="45" textFill="#3498db">
+                                        <Label fx:id="lblAllTems" text="45" textFill="#3498db">
                                             <font>
                                                 <Font name="System Bold" size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="All Projects" textFill="#7f8c8d">
+                                        <Label text="All Teams" textFill="#7f8c8d">
                                             <font>
                                                 <Font size="12.0" />
                                             </font>
@@ -43,12 +43,12 @@
                                 <!-- In Progress -->
                                 <VBox alignment="CENTER" spacing="5.0">
                                     <children>
-                                        <Label text="19" textFill="#e67e22">
+                                        <Label fx:id="lblActiveTeams" text="19" textFill="#e67e22">
                                             <font>
                                                 <Font name="System Bold" size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="In Progress" textFill="#7f8c8d">
+                                        <Label text="Active Team" textFill="#7f8c8d">
                                             <font>
                                                 <Font size="12.0" />
                                             </font>
@@ -59,12 +59,12 @@
                                 <!-- Upcoming -->
                                 <VBox alignment="CENTER" spacing="5.0">
                                     <children>
-                                        <Label text="13" textFill="#f39c12">
+                                        <Label fx:id="lblInactiveTeams" text="13" textFill="#f39c12">
                                             <font>
                                                 <Font name="System Bold" size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="Upcoming" textFill="#7f8c8d">
+                                        <Label text="Inactive Team" textFill="#7f8c8d">
                                             <font>
                                                 <Font size="12.0" />
                                             </font>
@@ -75,12 +75,12 @@
                                 <!-- Total Project -->
                                 <VBox alignment="CENTER" spacing="5.0">
                                     <children>
-                                        <Label text="32" textFill="#1abc9c">
+                                        <Label fx:id="lblAchievedTeams" text="32" textFill="#1abc9c">
                                             <font>
                                                 <Font name="System Bold" size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="Total Project" textFill="#7f8c8d">
+                                        <Label text="Achieved Team" textFill="#7f8c8d">
                                             <font>
                                                 <Font size="12.0" />
                                             </font>

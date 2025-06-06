@@ -14,4 +14,18 @@ public class TeamDto {
     private String name;
     private String description;
     private String status;
-} 
+    private int teamMemberCount;
+
+
+    public TeamDto(int teamId, String name, String description, String status) {
+        this.teamId = teamId;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+    }
+
+    public TeamDto(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+}

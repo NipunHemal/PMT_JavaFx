@@ -267,8 +267,8 @@
 
 /* Warning badge */
 .badge.warning {
-    -fx-background-color: #ffecee;
-    -fx-text-fill: #e74c3c;
+    -fx-background-color: #fffbec;
+    -fx-text-fill: #e7c53c;
 }
 
 .badge.warning:hover {
@@ -277,8 +277,8 @@
 
 /* Info badge */
 .badge.info {
-    -fx-background-color: #3498db;
-    -fx-text-fill: white;
+    -fx-background-color: #acc1fd;
+    -fx-text-fill: #0029ff;
 }
 
 .badge.info:hover {

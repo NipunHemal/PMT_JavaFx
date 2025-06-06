@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="150" prefWidth="370" style="-fx-background-color: white; -fx-background-radius: 18; -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.07),12,0,0,3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.TeamCardController">
+<AnchorPane onMouseClicked="#onClickTeamOnAction" prefHeight="150" prefWidth="370" style="-fx-background-color: white; -fx-background-radius: 18; -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.07),12,0,0,3);" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.TeamCardController">
     <children>
         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
             <children>
@@ -25,19 +27,19 @@
                             </ImageView>
                         </StackPane>
                         <VBox alignment="CENTER_LEFT" spacing="2">
-                            <Text style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-fill: #20233A;" text="Team Name" />
+                            <Text fx:id="txtMainTitle" style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-fill: #20233A;" text="Team Name" />
                             <HBox alignment="CENTER_LEFT" spacing="8">
-                                <Label style="-fx-text-fill: #22C55E; -fx-font-size: 12px; -fx-font-weight: bold;" text="Active" />
-                                <Circle fill="#22C55E" radius="5" />
+                                <Label fx:id="txtStatus" style="-fx-text-fill: #22C55E; -fx-font-size: 12px; -fx-font-weight: bold;" text="Active" />
+                                <Circle fx:id="circleStatus" fill="#22C55E" radius="5" />
                             </HBox>
                         </VBox>
                         <Pane HBox.hgrow="ALWAYS" />
-                        <Label style="-fx-background-color: #F5F6FA; -fx-background-radius: 6; -fx-padding: 4 10 4 10; -fx-text-fill: #5D5D7A; -fx-font-size: 12px;" text="IT Department" />
+                        <Label fx:id="txtLable" style="-fx-background-color: #F5F6FA; -fx-background-radius: 6; -fx-padding: 4 10 4 10; -fx-text-fill: #5D5D7A; -fx-font-size: 12px;" text="IT Department" />
                     </children>
                 </HBox>
 
-                <!-- Description -->
-                <Label minHeight="100.0" prefHeight="100.0" style="-fx-font-size: 13.5px; -fx-text-fill: #7A8194;" text="This team manages software development, QA, and delivery for client projects." wrapText="true" />
+                      <!-- Description -->
+                <Label fx:id="txtDescription" minHeight="100.0" prefHeight="100.0" style="-fx-font-size: 13.5px; -fx-text-fill: #7A8194;" text="This team manages software development, QA, and delivery for client projects." wrapText="true" />
                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                     <children>
                         <HBox fx:id="imgLoader" spacing="-10.0">
@@ -48,11 +50,32 @@
                             </children>
                         </HBox>
                         <Pane HBox.hgrow="ALWAYS" />
-                        <Label fx:id="txt3" text="2 Days Left" textFill="#7f8c8d">
+                        <Label fx:id="txtRightButtob" textFill="#7f8c8d">
                             <font>
                                 <Font size="11.0" />
                             </font>
                         </Label>
+                  <JFXButton onAction="#btnChangeStatusOnAction" text="♻">
+                     <styleClass>
+                        <String fx:value="badge" />
+                        <String fx:value="success" />
+                        <String fx:value="rounded-full" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton onAction="#btnAddViewOnAction" text="👁">
+                     <styleClass>
+                        <String fx:value="badge" />
+                        <String fx:value="info" />
+                        <String fx:value="rounded-full" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton onAction="#btnAddEmployeeOnAction" text="➕">
+                     <styleClass>
+                        <String fx:value="badge" />
+                        <String fx:value="danger" />
+                        <String fx:value="rounded-full" />
+                     </styleClass>
+                  </JFXButton>
                     </children>
                 </HBox>
             </children>

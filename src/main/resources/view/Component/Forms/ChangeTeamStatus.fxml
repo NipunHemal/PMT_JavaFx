@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox fillWidth="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.ChangeTeamStatusFormController">
+    <children>
+
+        <!-- Main Content -->
+        <HBox spacing="40.0" styleClass="main-content" stylesheets="@../../../css/addStaff.css">
+            <children>
+
+                <!-- Right Side - Form Fields -->
+                <VBox spacing="10.0" styleClass="form-section" VBox.vgrow="ALWAYS">
+                    <children>
+                        <!-- Navigation Menu -->
+                        <VBox spacing="8.0" styleClass="nav-menu" />
+
+                        <!-- Form Fields -->
+                        <VBox prefWidth="400.0" spacing="18.0" styleClass="form-fields">
+                            <children>
+
+                            <!--change status-->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label styleClass="field-label" text="Role *">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="status" prefWidth="200.0" promptText="Select role" styleClass="modern-combo-box">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="ACTIVE" />
+                                                    <String fx:value="INACTIVE" />
+                                                    <String fx:value="SUSPEND" />
+                                                </FXCollections>
+                                            </items>
+                                        </ComboBox>
+                                    </children>
+                                </VBox>
+
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" />
+            </padding>
+            <StackPane.margin>
+                <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+            </StackPane.margin>
+        </HBox>
+    </children>
+</VBox>
