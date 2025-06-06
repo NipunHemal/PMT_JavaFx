@@ -18,4 +18,13 @@ public class ProjectDto {
     private String duration;
     private String status;
     private Long teamId;
-} 
+
+    public ProjectDto(String name, String description, String startDate, String endDate, String duration, int teamId) {
+        this.name = name;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.duration = duration;
+        this.teamId = (long) teamId;
+    }
+}

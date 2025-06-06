@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.TeamController">
+    <children>
+        <BorderPane layoutX="30.0" layoutY="30.0" stylesheets="@../../css/main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox spacing="10.0" style="-fx-background-color: #ffffff; -fx-padding: 10;" styleClass="rounded-lg" BorderPane.alignment="CENTER">
+                    <children>
+
+                        <!-- Statistics Section -->
+                        <HBox alignment="CENTER" spacing="40.0">
+                            <children>
+                                <!-- All Projects -->
+                                <VBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Label text="45" textFill="#3498db">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="All Projects" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- In Progress -->
+                                <VBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Label text="19" textFill="#e67e22">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="In Progress" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- Upcoming -->
+                                <VBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Label text="13" textFill="#f39c12">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Upcoming" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <!-- Total Project -->
+                                <VBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Label text="32" textFill="#1abc9c">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Total Project" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <Pane HBox.hgrow="ALWAYS" />
+
+                                <!-- View Toggle Buttons -->
+                                <HBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <JFXButton onAction="#btnCreateTeamOnAction">
+                                            <styleClass>
+                                                <String fx:value="header-btn" />
+                                                <String fx:value="icon-only" />
+                                                <String fx:value="not-focused" />
+                                            </styleClass>
+                                            <graphic>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="➕" />
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+                <!-- Scrollable Project Cards Container -->
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+                    <content>
+                        <FlowPane fx:id="fpnCardLoaderContainer" alignment="CENTER" columnHalignment="CENTER" hgap="25.0" orientation="HORIZONTAL" prefWrapLength="1200.0" rowValignment="TOP" style="-fx-background-color: #f8f9fa; -fx-padding: 30;" vgap="25.0" />
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+    <stylesheets>
+        <URL value="@../../css/layout/style.css" />
+        <URL value="@../../css/project-style.css" />
+    </stylesheets>
+</AnchorPane>

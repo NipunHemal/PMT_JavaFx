@@ -5,6 +5,7 @@ module lk.ijse.project_management_tool {
     requires static lombok;
     requires org.controlsfx.controls;
     requires com.jfoenix;
+    requires jdk.compiler;
 
 
     opens lk.ijse.project_management_tool.controller to javafx.fxml;

@@ -104,7 +104,7 @@ public class AddStaffController  implements Initializable {
 
         if (selectedFile != null) {
             // Destination folder
-            File destinationFolder = new File("/images/user"); // You can use any folder name
+            File destinationFolder = new File("src/main/resources/images/user"); // You can use any folder name
             if (!destinationFolder.exists()) {
                 destinationFolder.mkdirs(); // Create folder if not exists
             }

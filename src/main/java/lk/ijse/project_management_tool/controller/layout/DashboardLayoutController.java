@@ -43,4 +43,8 @@ public class DashboardLayoutController implements Initializable {
     public void btnTaskOnAction(ActionEvent actionEvent) {
         DashboardNavigator.navigate("Task");
     }
+
+    public void btnTeamOnAction(ActionEvent actionEvent) {
+        DashboardNavigator.navigate("Team");
+    }
 }

@@ -31,8 +31,14 @@ public class StaffCardController implements Initializable {
         txtPosition.setText(employee.getRole());
 
         if (imgUserPic != null && employee.getProfile() != null && !employee.getProfile().isEmpty()) {
-            String imagePath = getClass().getResource("/images/user/" + employee.getProfile()).toExternalForm();
-            imgUserPic.setImage(new Image(imagePath));
+            try{
+                String imagePath = getClass().getResource("/images/user/" + employee.getProfile()).toExternalForm();
+                imgUserPic.setImage(new Image(imagePath));
+            } catch (Exception e) {
+                e.printStackTrace();
+                String imagePath = getClass().getResource("/images/user/user.png").toExternalForm();
+                imgUserPic.setImage(new Image(imagePath));
+            }
         } else {
             String imagePath = getClass().getResource("/images/user/user.png").toExternalForm();
             imgUserPic.setImage(new Image(imagePath));

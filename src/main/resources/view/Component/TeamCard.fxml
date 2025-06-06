@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="150" prefWidth="370" style="-fx-background-color: white; -fx-background-radius: 18; -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.07),12,0,0,3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.TeamCardController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <!-- Top Row: Icon and Status -->
+                <HBox alignment="CENTER_LEFT" prefHeight="44" prefWidth="330" spacing="12">
+                    <children>
+                        <!-- Team Icon (placeholder, replace image as needed) -->
+                        <StackPane maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" style="-fx-background-color: #F0F3FA; -fx-background-radius: 12;">
+                            <ImageView fitHeight="28" fitWidth="28">
+                                <!-- Set team icon here if available in controller -->
+                            </ImageView>
+                        </StackPane>
+                        <VBox alignment="CENTER_LEFT" spacing="2">
+                            <Text style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-fill: #20233A;" text="Team Name" />
+                            <HBox alignment="CENTER_LEFT" spacing="8">
+                                <Label style="-fx-text-fill: #22C55E; -fx-font-size: 12px; -fx-font-weight: bold;" text="Active" />
+                                <Circle fill="#22C55E" radius="5" />
+                            </HBox>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label style="-fx-background-color: #F5F6FA; -fx-background-radius: 6; -fx-padding: 4 10 4 10; -fx-text-fill: #5D5D7A; -fx-font-size: 12px;" text="IT Department" />
+                    </children>
+                </HBox>
+
+                <!-- Description -->
+                <Label minHeight="100.0" prefHeight="100.0" style="-fx-font-size: 13.5px; -fx-text-fill: #7A8194;" text="This team manages software development, QA, and delivery for client projects." wrapText="true" />
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <HBox fx:id="imgLoader" spacing="-10.0">
+                            <children>
+                                <Circle fill="#3498db" radius="15.0" stroke="white" strokeWidth="2.0" />
+                                <Circle fill="#e74c3c" radius="15.0" stroke="white" strokeWidth="2.0" />
+                                <Circle fill="#f39c12" radius="15.0" stroke="white" strokeWidth="2.0" />
+                            </children>
+                        </HBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label fx:id="txt3" text="2 Days Left" textFill="#7f8c8d">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -57,7 +57,7 @@
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="👥" />
                      </graphic></JFXButton>
-                        <JFXButton>
+                        <JFXButton onAction="#btnTeamOnAction">
                      <styleClass>
                         <String fx:value="header-btn" />
                         <String fx:value="icon-only" />

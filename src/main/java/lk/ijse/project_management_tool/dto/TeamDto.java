@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeamDto {
-    private Long teamId;
+    private int teamId;
     private String name;
     private String description;
     private String status;

@@ -1,0 +1,43 @@
+/* Optional CSS file for additional styling */
+
+.card-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-border-radius: 10px;
+}
+
+.testimonial-text {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.user-name {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.user-title {
+    -fx-text-fill: #8B5CF6;
+    -fx-font-size: 12px;
+}
+
+.star {
+    -fx-font-size: 18px;
+}
+
+.star-filled {
+    -fx-fill: #FFD700;
+}
+
+.star-empty {
+    -fx-fill: #E5E5E5;
+}
+
+/* Hover effect for the entire card */
+.card-container:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 3);
+    -fx-cursor: hand;
+}

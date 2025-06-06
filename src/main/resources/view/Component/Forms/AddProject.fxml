@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" fillWidth="false" minWidth="500.0" prefWidth="500.0" stylesheets="@../../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddStaffController">
+<VBox alignment="TOP_CENTER" fillWidth="false" minWidth="500.0" prefWidth="500.0" stylesheets="@../../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddProjectFormController">
    <children>
       <VBox prefWidth="400.0" spacing="18.0" styleClass="form-fields">
          <children>
@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nameField" promptText="Project name" styleClass="modern-text-field">
+                  <TextField fx:id="txtNameField" promptText="Project name" styleClass="modern-text-field">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -34,7 +34,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <DatePicker promptText="Start Date" styleClass="modern-date-picker" />
+                  <DatePicker fx:id="txtStartDate" promptText="Start Date" styleClass="modern-date-picker" />
                </children>
             </VBox>
             <Label styleClass="field-label" text="End Date *">
@@ -44,7 +44,7 @@
             </Label>
             <VBox spacing="5.0">
                <children>
-                  <DatePicker promptText="End Date" styleClass="modern-date-picker" />
+                  <DatePicker fx:id="txtEndDate" promptText="End Date" styleClass="modern-date-picker" />
                </children>
             </VBox>
             <VBox spacing="5.0">
@@ -54,7 +54,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="addressField" prefRowCount="3" promptText="Enter address" styleClass="modern-text-area" wrapText="true">
+                  <TextArea fx:id="txtDescription" prefRowCount="3" promptText="Enter Descriprion" styleClass="modern-text-area" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nameField1" promptText="Project name" styleClass="modern-text-field">
+                  <TextField fx:id="txtDuration" promptText="Duration ( 3 Month )" styleClass="modern-text-field">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -82,7 +82,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="roleComboBox" prefWidth="200.0" promptText="Select the team" styleClass="modern-combo-box" />
+                  <ComboBox fx:id="combSelectTesm" prefWidth="200.0" promptText="Select the team" styleClass="modern-combo-box" />
                </children>
             </VBox>
          </children>

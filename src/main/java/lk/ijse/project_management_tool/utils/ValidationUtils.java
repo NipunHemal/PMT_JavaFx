@@ -1,5 +1,6 @@
 package lk.ijse.project_management_tool.utils;
 
+import com.sun.source.tree.BreakTree;
 import javafx.scene.control.*;
 
 public class ValidationUtils {
@@ -30,6 +31,7 @@ public class ValidationUtils {
     }
 
     public static boolean validatePasswordMatch(PasswordField passwordField, PasswordField confirmPasswordField) {
+//        if (true) return true;
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
@@ -56,6 +58,7 @@ public class ValidationUtils {
 
 
     public static boolean validateInput(Control control, String type) {
+//        if (true) return true;
         String value = "";
 
         // Extract text or selected value based on control type
@@ -64,6 +67,8 @@ public class ValidationUtils {
         } else if (control instanceof ComboBox comboBox) {
             Object selected = comboBox.getValue();
             value = (selected != null) ? selected.toString().trim() : "";
+        } else if (control instanceof DatePicker datePicker) {
+            value = datePicker.getValue() != null ? datePicker.getValue().toString() : "";
         } else {
             System.err.println("Unsupported control type: " + control.getClass().getSimpleName());
             return false;

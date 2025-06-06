@@ -39,7 +39,7 @@ public class TeamModel {
 
         while (resultSet.next()) {
             teams.add(new TeamDto(
-                    resultSet.getLong("team_id"),
+                    resultSet.getInt("team_id"),
                     resultSet.getString("name"),
                     resultSet.getString("description"),
                     resultSet.getString("status")
@@ -54,7 +54,7 @@ public class TeamModel {
 
         if (resultSet.next()) {
             return new TeamDto(
-                    resultSet.getLong("team_id"),
+                    resultSet.getInt("team_id"),
                     resultSet.getString("name"),
                     resultSet.getString("description"),
                     resultSet.getString("status")
