@@ -6,7 +6,7 @@ module lk.ijse.project_management_tool {
     requires org.controlsfx.controls;
     requires com.jfoenix;
     requires jdk.compiler;
-
+    requires jakarta.mail;
 
     opens lk.ijse.project_management_tool.controller to javafx.fxml;
     opens lk.ijse.project_management_tool.controller.auth to javafx.fxml;

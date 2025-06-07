@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import lk.ijse.project_management_tool.dto.EmployeeDto;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,8 +31,10 @@ public class StaffCardController implements Initializable {
         txtStatus.setText(employee.getStatus());
         txtPosition.setText(employee.getRole());
 
-        if (imgUserPic != null && employee.getProfile() != null && !employee.getProfile().isEmpty()) {
+        if ( employee.getProfile() != null ) {
+            System.out.println("sssss");
             try{
+                System.out.println("vvvvvvvvvvv");
                 String imagePath = getClass().getResource("/images/user/" + employee.getProfile()).toExternalForm();
                 imgUserPic.setImage(new Image(imagePath));
             } catch (Exception e) {
@@ -40,6 +43,7 @@ public class StaffCardController implements Initializable {
                 imgUserPic.setImage(new Image(imagePath));
             }
         } else {
+            System.out.println("aaaaa");
             String imagePath = getClass().getResource("/images/user/user.png").toExternalForm();
             imgUserPic.setImage(new Image(imagePath));
         }

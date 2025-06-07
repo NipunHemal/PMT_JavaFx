@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Circle?>
+
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="440" prefHeight="390"
+            style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.08),16,0,0,4);">
+    <children>
+        <!-- Header Section -->
+        <VBox layoutX="0" layoutY="0" spacing="0" prefWidth="440" prefHeight="110">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="15" layoutX="26" layoutY="26" prefHeight="60" prefWidth="400" style="-fx-padding: 26 26 10 26;">
+                    <children>
+                        <!-- Team Icon -->
+                        <StackPane minWidth="52" minHeight="52" maxWidth="52" maxHeight="52"
+                                   style="-fx-background-color: #F0F3FA; -fx-background-radius: 15;">
+                            <ImageView fitWidth="34" fitHeight="34">
+                                <!-- Team Icon, set in controller -->
+                            </ImageView>
+                        </StackPane>
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Text text="Team Name"
+                                  style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #20233A;" />
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Active"
+                                       style="-fx-text-fill: #22C55E; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+                                <Circle radius="6" fill="#22C55E"/>
+                                <Label text="IT Department"
+                                       style="-fx-background-color: #F5F6FA; -fx-background-radius: 8; -fx-padding: 2 10 2 10; -fx-text-fill: #5D5D7A; -fx-font-size: 12px;"/>
+                            </HBox>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label text="Employees: 12"
+                               style="-fx-background-color: #F8E1F4; -fx-background-radius: 8; -fx-padding: 6 16 6 16; -fx-text-fill: #9C1366; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+                    </children>
+                </HBox>
+                <Label text="This team manages software development, QA, and delivery for client projects. Dedicated to innovation and business growth."
+                       wrapText="true"
+                       style="-fx-font-size: 14px; -fx-text-fill: #7A8194; -fx-padding: 0 26 0 95;"/>
+            </children>
+        </VBox>
+
+        <!-- Divider Line -->
+        <Rectangle layoutX="26" layoutY="112" width="388" height="1" fill="#F0F3FA"/>
+
+        <!-- Members Section Title -->
+        <Text layoutX="26" layoutY="135" text="Team Members"
+              style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #20233A;"/>
+
+        <!-- Team Members List -->
+        <VBox layoutX="26" layoutY="150" spacing="13" prefWidth="388">
+            <!-- Repeat this HBox for each member in controller/loop -->
+            <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="54" prefWidth="388"
+                  style="-fx-background-color: #F5F6FA; -fx-background-radius: 10;">
+                <children>
+                    <!-- Member Avatar -->
+                    <StackPane minWidth="36" minHeight="36" maxWidth="36" maxHeight="36"
+                               style="-fx-background-color: #DEE8F5; -fx-background-radius: 18;">
+                        <ImageView fitWidth="28" fitHeight="28">
+                            <!-- Member avatar, set in controller -->
+                        </ImageView>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT" spacing="1">
+                        <Text text="Member Name" style="-fx-font-size: 14.5px; -fx-font-weight: bold; -fx-fill: #232949;"/>
+                        <Text text="Role: Software Engineer" style="-fx-font-size: 12.5px; -fx-fill: #676D7B;"/>
+                    </VBox>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Label text="Online"
+                           style="-fx-background-color: #D1FADF; -fx-background-radius: 6; -fx-padding: 2 10 2 10; -fx-text-fill: #138A50; -fx-font-size: 12px;"/>
+                </children>
+            </HBox>
+            <!-- Example member 2 -->
+            <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="54" prefWidth="388"
+                  style="-fx-background-color: #F5F6FA; -fx-background-radius: 10;">
+                <children>
+                    <StackPane minWidth="36" minHeight="36" maxWidth="36" maxHeight="36"
+                               style="-fx-background-color: #DEE8F5; -fx-background-radius: 18;">
+                        <ImageView fitWidth="28" fitHeight="28">
+                            <!-- Member avatar -->
+                        </ImageView>
+                    </StackPane>
+                    <VBox alignment="CENTER_LEFT" spacing="1">
+                        <Text text="Member Name 2" style="-fx-font-size: 14.5px; -fx-font-weight: bold; -fx-fill: #232949;"/>
+                        <Text text="Role: QA Lead" style="-fx-font-size: 12.5px; -fx-fill: #676D7B;"/>
+                    </VBox>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Label text="Offline"
+                           style="-fx-background-color: #FFE4E6; -fx-background-radius: 6; -fx-padding: 2 10 2 10; -fx-text-fill: #B91C1C; -fx-font-size: 12px;"/>
+                </children>
+            </HBox>
+            <!-- Add more HBox items for each member dynamically in your controller -->
+        </VBox>
+    </children>
+</AnchorPane>

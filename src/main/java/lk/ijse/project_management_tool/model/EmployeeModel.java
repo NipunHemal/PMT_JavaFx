@@ -84,7 +84,7 @@ public class EmployeeModel {
         return null;
     }
 
-    public ArrayList<EmployeeDto> getEmployeesByTeamId(Long teamId) throws SQLException, ClassNotFoundException {
+    public ArrayList<EmployeeDto> getEmployeesByTeamId(int teamId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM employee WHERE team_id=?";
         ResultSet resultSet = CrudUtil.execute(sql, teamId);
         ArrayList<EmployeeDto> employees = new ArrayList<>();
@@ -147,4 +147,9 @@ public class EmployeeModel {
             ));
         }
     }
-} 
+
+    public boolean addTeamToEmployee(int employeeId, int teamId) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE employee SET team_id=? WHERE employee_id=?";
+        return CrudUtil.execute(sql, teamId,employeeId);
+    }
+}

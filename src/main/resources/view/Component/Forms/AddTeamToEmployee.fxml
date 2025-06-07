@@ -15,7 +15,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox fillWidth="false"  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddTeamFormController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox fillWidth="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddTeamToEmployee">
     <children>
 
         <!-- Main Content -->
@@ -31,37 +33,18 @@
                         <!-- Form Fields -->
                         <VBox prefWidth="400.0" spacing="18.0" styleClass="form-fields">
                             <children>
-                                <!-- Name Field -->
+
                                 <VBox spacing="5.0">
                                     <children>
-                                        <Label styleClass="field-label" text="Team Name *">
+                                        <Label styleClass="field-label" text="Employee *">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
-                                        <TextField fx:id="nameField" promptText="Enter full name" styleClass="modern-text-field">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </TextField>
+                                        <ComboBox fx:id="combEmployee" prefWidth="200.0" promptText="Select Employee" styleClass="modern-combo-box"/>
                                     </children>
                                 </VBox>
 
-                                <!-- Address Field -->
-                                <VBox spacing="5.0">
-                                    <children>
-                                        <Label styleClass="field-label" text="Address">
-                                            <font>
-                                                <Font name="System Bold" size="13.0" />
-                                            </font>
-                                        </Label>
-                                        <TextArea fx:id="descriptionField" prefRowCount="3" promptText="Enter address" styleClass="modern-text-area" wrapText="true">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </TextArea>
-                                    </children>
-                                </VBox>
                             </children>
                         </VBox>
                     </children>

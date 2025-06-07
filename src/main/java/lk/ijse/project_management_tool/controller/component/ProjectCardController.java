@@ -59,4 +59,13 @@ public class ProjectCardController implements Initializable {
 
     public void btnMoreOnAction(ActionEvent actionEvent) {
     }
+
+    public void btnChangeStatusOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnAddViewOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnAddEmployeeOnAction(ActionEvent actionEvent) {
+    }
 }
