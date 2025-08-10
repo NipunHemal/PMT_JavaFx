@@ -1,4 +1,4 @@
-package lk.ijse.project_management_tool.controller.component;
+package lk.ijse.project_management_tool.controller.component.team;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,13 +11,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import lk.ijse.project_management_tool.controller.TeamController;
-import lk.ijse.project_management_tool.controller.TeamViewCardController;
 import lk.ijse.project_management_tool.dto.EmployeeDto;
 import lk.ijse.project_management_tool.dto.TeamDto;
 import lk.ijse.project_management_tool.model.EmployeeModel;
 import lk.ijse.project_management_tool.utils.DialogUtil;
 import lk.ijse.project_management_tool.utils.NotificationUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class TeamCardController {
@@ -62,13 +62,30 @@ public class TeamCardController {
                 avatar.setClip(new Circle(15, 15, 15));
 
                 try {
-                    String imagePath = employee.getProfile() == null ?
-                            getClass().getResource("/images/user/user.png").toExternalForm() :
-                            getClass().getResource("/images/user/" + employee.getProfile()).toExternalForm();
-                    avatar.setImage(new Image(imagePath));
-                } catch (NullPointerException e) {
+                    System.out.println("Profile image found: " + employee.getProfile());
+                    String profile = employee.getProfile();
+
+                    if (profile != null && !profile.isBlank()) {
+                        File externalImageFile = new File("src/main/resources/images/user/" + profile); // or your external folder
+
+                        if (externalImageFile.exists()) {
+                            avatar.setImage(new Image(externalImageFile.toURI().toString()));
+                        } else {
+                            // Fallback to default image in resources
+                            String defaultImage = getClass().getResource("/images/user/user.png").toExternalForm();
+                            avatar.setImage(new Image(defaultImage));
+                        }
+
+                    } else {
+                        // Profile is null or blank
+                        String defaultImage = getClass().getResource("/images/user/user.png").toExternalForm();
+                        avatar.setImage(new Image(defaultImage));
+                    }
+
+                } catch (Exception e) {
                     NotificationUtils.showError("Error", e.getMessage());
                 }
+
 
                 imgLoader.getChildren().add(avatar);
             }

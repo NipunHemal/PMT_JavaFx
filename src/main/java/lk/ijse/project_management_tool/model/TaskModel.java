@@ -9,25 +9,21 @@ import java.util.ArrayList;
 
 public class TaskModel {
     public boolean saveTask(TaskDto task) throws SQLException, ClassNotFoundException {
-        String sql = "INSERT INTO tasks (title, description, status, project_id, project_name, progress, tag) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO tasks (title, description, project_id, project_name, tag) VALUES (?,?,?,?,?)";
         return CrudUtil.execute(sql,
                 task.getTitle(),
                 task.getDescription(),
-                task.getStatus(),
                 task.getProjectId(),
                 task.getProjectName(),
-                task.getProgress(),
                 task.getTag());
     }
 
     public boolean updateTask(TaskDto task) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE tasks SET title=?, description=?, status=?, project_id=?, project_name=?, progress=?, tag=? WHERE id=?";
+        String sql = "UPDATE tasks SET title=?, description=?, status=?,  progress=?, tag=? WHERE id=?";
         return CrudUtil.execute(sql,
                 task.getTitle(),
                 task.getDescription(),
                 task.getStatus(),
-                task.getProjectId(),
-                task.getProjectName(),
                 task.getProgress(),
                 task.getTag(),
                 task.getId());
@@ -38,9 +34,9 @@ public class TaskModel {
         return CrudUtil.execute(sql, taskId);
     }
 
-    public ArrayList<TaskDto> getAllTasks() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT t.*, p.name as project_name FROM tasks t LEFT JOIN projects p ON t.project_id = p.project_id";
-        ResultSet resultSet = CrudUtil.execute(sql);
+    public ArrayList<TaskDto> getAllTasksForProject(Long id) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT t.*, p.name as project_name FROM tasks t LEFT JOIN projects p ON t.project_id = p.project_id WHERE t.project_id=?";
+        ResultSet resultSet = CrudUtil.execute(sql, id);
         ArrayList<TaskDto> tasks = new ArrayList<>();
 
         while (resultSet.next()) {

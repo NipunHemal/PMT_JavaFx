@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
-<VBox spacing="12" alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.TaskFormController">
+
+<VBox alignment="CENTER_LEFT" spacing="12" stylesheets="@../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.task.TaskFormController">
     <children>
-        <Label text="Add / Edit Task" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-        <ComboBox fx:id="cmbProjectId" promptText="Project" prefWidth="220" />
-        <TextField fx:id="txtTitle" promptText="Title" prefWidth="220" />
-        <TextArea fx:id="txtDescription" promptText="Description" prefWidth="220" prefHeight="60" />
-        <TextArea fx:id="txtNote" promptText="Note" prefWidth="220" prefHeight="60" />
-        <DatePicker fx:id="dpStartDate" promptText="Start Date" prefWidth="220" />
-        <DatePicker fx:id="dpDeadline" promptText="Deadline" prefWidth="220" />
-        <ComboBox fx:id="cmbStatus" promptText="Status" prefWidth="220" />
-        <Spinner fx:id="spnProgress" promptText="Progress (1-10)" prefWidth="220" />
-        <TextField fx:id="txtTag" promptText="Tag" prefWidth="220" />
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Add / Edit Task" />
+        <TextField fx:id="txtTitle" prefWidth="220" promptText="Title" styleClass="modern-text-field" VBox.vgrow="ALWAYS" />
+        <TextArea fx:id="txtDescription" prefHeight="60" prefWidth="220" promptText="Description" styleClass="modern-text-area" VBox.vgrow="ALWAYS" />
+      <ComboBox fx:id="cmbStatus" prefWidth="150.0" styleClass="modern-combo-box" VBox.vgrow="ALWAYS" />
+        <TextField fx:id="txtTag" prefWidth="220" promptText="Tag" styleClass="modern-text-field" VBox.vgrow="ALWAYS" />
     </children>
-</VBox> 
+   <styleClass>
+      <String fx:value="main-content" />
+      <String fx:value="form-section" />
+      <String fx:value="form-fields" />
+   </styleClass>
+</VBox>

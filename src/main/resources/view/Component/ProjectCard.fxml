@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbxProjectCard" onMouseClicked="#onClickCardOnAction" prefHeight="200.0" prefWidth="280.0" spacing="15.0" style="-fx-background-color: #e8e7f3; -fx-background-radius: 15; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.ProjectCardController">
+<VBox fx:id="vbxProjectCard" onMouseClicked="#onClickCardOnAction" prefHeight="200.0" prefWidth="280.0" spacing="15.0" style="-fx-background-color: #e8e7f3; -fx-background-radius: 15; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.project.ProjectCardController">
    <children>
       <HBox alignment="CENTER_LEFT" spacing="5.0">
          <children>
@@ -106,7 +106,7 @@
                   <String fx:value="rounded-full" />
                </styleClass>
             </JFXButton>
-            <JFXButton onAction="#btnAddEmployeeOnAction" text="➕">
+            <JFXButton onAction="#removeProjectOnAction" text="🗑">
                <styleClass>
                   <String fx:value="badge" />
                   <String fx:value="danger" />

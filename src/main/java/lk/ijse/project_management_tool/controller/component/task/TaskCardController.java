@@ -1,4 +1,4 @@
-package lk.ijse.project_management_tool.controller.component;
+package lk.ijse.project_management_tool.controller.component.task;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.Parent;
@@ -14,10 +13,11 @@ import javafx.scene.Parent;
 import java.io.IOException;
 import java.util.List;
 
+import lk.ijse.project_management_tool.controller.TaskController;
 import lk.ijse.project_management_tool.model.TaskModel;
+import lk.ijse.project_management_tool.utils.AlertUtils;
 import lk.ijse.project_management_tool.utils.DialogUtil;
 import lk.ijse.project_management_tool.dto.TaskDto;
-import lk.ijse.project_management_tool.controller.component.TaskFormController;
 
 public class TaskCardController {
     @FXML
@@ -58,6 +58,12 @@ public class TaskCardController {
 
     private Long taskId;
     private Runnable onDelete;
+
+    TaskController taskController;
+
+    public void init(TaskController taskController) {
+        this.taskController = taskController;
+    }
 
     public static TaskCardController create() throws IOException {
         FXMLLoader loader = new FXMLLoader(TaskCardController.class.getResource("/view/components/TaskCard.fxml"));
@@ -145,21 +151,21 @@ public class TaskCardController {
 
     @FXML
     private void onDeleteTaskClicked() {
-        DialogUtil.showConfirm(
-                "Delete Task",
-                "Are you sure you want to delete this task?",
-                () -> {
-                    try {
-                        new TaskModel().deleteTask(taskId);
-                        if (onDelete != null)
-                            onDelete.run();
-                        DialogUtil.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                },
-                () -> {
-                });
+        boolean isConfirmed = AlertUtils.showConform("Confirmation", "Are you sure you want to delete this task?");
+        if (!isConfirmed) return;
+
+        try {
+            boolean isDeleted = new TaskModel().deleteTask(taskId);
+            if (isDeleted) {
+                taskController.initialize(null, null);
+                AlertUtils.showSuccess("Success", "Task deleted successfully");
+            } else {
+                AlertUtils.showError("Error", "Failed to delete task");
+            }
+        } catch (Exception e) {
+            AlertUtils.showError("Error", "Failed to delete task");
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -167,26 +173,15 @@ public class TaskCardController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/components/TaskForm.fxml"));
             Parent form = loader.load();
-            TaskFormController controller = loader.getController();
-            controller.setFormData(taskId);
+            loader.<TaskFormController>getController().init(taskController,null);
+            loader.<TaskFormController>getController().setFormData(taskId);
             DialogUtil.showCustom(
                     "Update Task",
                     "",
                     form,
                     "Update",
                     "Cancel",
-                    () -> {
-                        try {
-                            TaskDto dto = controller.getTaskDto();
-                            dto.setId(taskId); // Set the task ID for update
-                            new TaskModel().updateTask(dto);
-                            if (onDelete != null)
-                                onDelete.run(); // reload tasks
-                            DialogUtil.close();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    },
+                    () -> loader.<TaskFormController>getController().update(taskId),
                     null);
         } catch (Exception e) {
             e.printStackTrace();

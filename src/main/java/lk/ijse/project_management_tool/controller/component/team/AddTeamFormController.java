@@ -1,4 +1,4 @@
-package lk.ijse.project_management_tool.controller.component;
+package lk.ijse.project_management_tool.controller.component.team;
 
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;

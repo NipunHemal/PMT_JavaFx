@@ -32,7 +32,7 @@ public class ProjectController  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadProjects();
-        loadSummaryOfProjectsCount();
+        loadSummaryOfProjectsCount()
     }
 
     private void loadSummaryOfProjectsCount(){

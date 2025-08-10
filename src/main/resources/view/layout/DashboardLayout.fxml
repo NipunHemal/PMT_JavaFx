@@ -31,7 +31,7 @@
                         <String fx:value="icon-only" />
                      </styleClass>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="📄" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="🏠" />
                      </graphic></JFXButton>
                         <JFXButton onAction="#btnProjectOnAction">
                      <styleClass>
@@ -39,15 +39,7 @@
                         <String fx:value="icon-only" />
                      </styleClass>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⬇" />
-                     </graphic></JFXButton>
-                        <JFXButton onAction="#btnProfileOnAction">
-                     <styleClass>
-                        <String fx:value="header-btn" />
-                        <String fx:value="icon-only" />
-                     </styleClass>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="⭐" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="📁" />
                      </graphic></JFXButton>
                         <JFXButton onAction="#btnStaffOnAction">
                      <styleClass>
@@ -55,7 +47,7 @@
                         <String fx:value="icon-only" />
                      </styleClass>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="👥" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="👩‍💻" />
                      </graphic></JFXButton>
                         <JFXButton onAction="#btnTeamOnAction">
                      <styleClass>
@@ -63,7 +55,7 @@
                         <String fx:value="icon-only" />
                      </styleClass>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="❤" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="👥" />
                      </graphic></JFXButton>
                   <JFXButton onAction="#btnTaskOnAction">
                      <styleClass>
@@ -153,27 +145,27 @@
 <!--                         <JFXButton style="-fx-text-fill: #7f8c8d;" text="⚙ Settings" />-->
 <!--                     </HBox>-->
                      <HBox alignment="CENTER" spacing="30.0">
-                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Home">
+                         <JFXButton minWidth="101.0" onAction="#btnHomeNavOnAction" styleClass="header-btn" text="Home">
                              <graphic>
                                  <Text text="🏠" />
                              </graphic>
                          </JFXButton>
 
-                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Projects">
+                         <JFXButton minWidth="101.0" onAction="#btnProjectNavOnAction" styleClass="header-btn" text="Projects">
                              <graphic>
                                  <Text text="📁" />
                              </graphic>
                          </JFXButton>
 
-                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Invoices">
+                         <JFXButton minWidth="101.0" onAction="#btnTeamNavOnAction" styleClass="header-btn" text="Team">
                              <graphic>
-                                 <Text text="📄" />
+                                 <Text text="👥" />
                              </graphic>
                          </JFXButton>
 
-                         <JFXButton minWidth="101.0" styleClass="header-btn" text="Settings">
+                         <JFXButton minWidth="101.0" onAction="#btnStaffNavOnAction" styleClass="header-btn" text="Staff">
                              <graphic>
-                                 <Text text="⚙" />
+                                 <Text text="👩‍💻" />
                              </graphic>
                          </JFXButton>
                      </HBox>

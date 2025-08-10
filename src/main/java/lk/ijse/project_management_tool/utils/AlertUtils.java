@@ -96,6 +96,34 @@ public class AlertUtils {
         }
         return null;
     }
+
+    // show conform
+    public static boolean showConform(String title, String message) {
+        String iconPath = "/images/icons/warn.png";
+        Image image = new Image(AlertUtils.class.getResource(iconPath).toExternalForm());
+        ImageView icon = new ImageView(image);
+        icon.setFitWidth(50);
+        icon.setFitHeight(50);
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setGraphic(icon);
+        alert.setContentText(message);
+
+        // set header icon
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().clear();
+        stage.getIcons().add(new Image(AlertUtils.class.getResource(iconPath).toExternalForm()));
+
+        // Set custom stylesheet
+        alert.getDialogPane().getStylesheets().add(
+                AlertUtils.class.getResource("/css/util/alert.css").toExternalForm()
+        );
+
+        Optional<ButtonType> result = alert.showAndWait();
+        return result.isPresent() && result.get() == ButtonType.OK;
+    }
 }
 
 // example usage

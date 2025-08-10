@@ -35,27 +35,27 @@
                                 <fx:define>
                                     <ToggleGroup />
                                 </fx:define>
-                                <ToggleButton mnemonicParsing="false" selected="true" styleClass="filter-button, filter-button-active" text="All">
+                                <ToggleButton mnemonicParsing="false" selected="true" styleClass="filter-button, filter-button-active" text="  All">
                                     <graphic>
-                                        <Label fx:id="allCountLabel" styleClass="filter-count" text="85" />
+                                        <Label fx:id="labAllCount" styleClass="filter-count" text="85" />
                                     </graphic>
                            <toggleGroup>
                               <ToggleGroup />
                            </toggleGroup>
                                 </ToggleButton>
-                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Started">
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="  Active">
                                     <graphic>
-                                        <Label fx:id="startedCountLabel" styleClass="filter-count" text="39" />
+                                        <Label fx:id="labActiveCount" styleClass="filter-count" text="39" />
                                     </graphic>
                                 </ToggleButton>
-                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Approval">
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="  Pending">
                                     <graphic>
-                                        <Label fx:id="approvalCountLabel" styleClass="filter-count" text="15" />
+                                        <Label fx:id="labPendingCount" styleClass="filter-count" text="15" />
                                     </graphic>
                                 </ToggleButton>
-                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="Completed">
+                                <ToggleButton mnemonicParsing="false" styleClass="filter-button" text="  Inactive">
                                     <graphic>
-                                        <Label fx:id="completedCountLabel" styleClass="filter-count" text="34" />
+                                        <Label fx:id="labInactiveCount" styleClass="filter-count" text="34" />
                                     </graphic>
                                 </ToggleButton>
                                 <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">

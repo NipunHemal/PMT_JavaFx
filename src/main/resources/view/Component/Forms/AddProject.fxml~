@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" fillWidth="false" minWidth="500.0" prefWidth="500.0" stylesheets="@../../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.project.AddProjectFormController">
+<VBox alignment="TOP_CENTER" fillWidth="false" minWidth="500.0" prefWidth="500.0" stylesheets="@../../../css/addStaff.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.AddProjectFormController">
    <children>
       <VBox prefWidth="400.0" spacing="18.0" styleClass="form-fields">
          <children>

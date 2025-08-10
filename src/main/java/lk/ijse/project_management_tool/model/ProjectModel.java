@@ -35,7 +35,7 @@ public class ProjectModel {
         );
     }
 
-    public boolean deleteProject(Long projectId) throws SQLException, ClassNotFoundException {
+    public boolean deleteProject(int projectId) throws SQLException, ClassNotFoundException {
         String sql = "DELETE FROM projects WHERE project_id=?";
         return CrudUtil.execute(sql, projectId);
     }
@@ -98,4 +98,30 @@ public class ProjectModel {
         }
         return projects;
     }
-} 
+
+    public boolean updateProjectStatus(int projectId, String status) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE projects SET status=? WHERE project_id=?";
+        return CrudUtil.execute(sql, status, projectId);
+    }
+
+    public boolean updateProjectTeam(int projectId, int teamId) throws SQLException, ClassNotFoundException {
+
+
+        String sql = "UPDATE projects SET team_id=? WHERE project_id=?";
+        return CrudUtil.execute(sql, teamId, projectId);
+    }
+
+    public ArrayList<Integer> summaryOfProjectCount() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT (SELECT COUNT(project_id) from projects) as AllProject, (SELECT COUNT(project_id) from projects where status = 'In Progress') as InProgressProject, (SELECT COUNT(project_id) from projects where status = 'Completed') as CompletedProject, (SELECT COUNT(project_id) from projects where status = 'On Hold') as OnHoldProject, (SELECT COUNT(project_id) from projects where status = 'Cancelled') as CancelledProject;";
+        ResultSet resultSet = CrudUtil.execute(sql);
+        ArrayList<Integer> projectCount = new ArrayList<>();
+        while (resultSet.next()) {
+            projectCount.add(resultSet.getInt(1));
+            projectCount.add(resultSet.getInt(2));
+            projectCount.add(resultSet.getInt(3));
+            projectCount.add(resultSet.getInt(4));
+            projectCount.add(resultSet.getInt(5));
+        }
+        return projectCount;
+    }
+}

@@ -1,9 +1,11 @@
 package lk.ijse.project_management_tool.model;
 
+import lk.ijse.project_management_tool.db.DbConnector;
 import lk.ijse.project_management_tool.dto.EmployeeDto;
 import lk.ijse.project_management_tool.dto.TeamDto;
 import lk.ijse.project_management_tool.utils.CrudUtil;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -73,8 +75,8 @@ public class TeamModel {
         return teams;
     }
 
-    public TeamDto getTeamById(Long teamId) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM teams WHERE team_id=?";
+    public TeamDto getTeamById(int teamId) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT teams.*,count(employee.employee_id) AS EmployeeCount FROM teams JOIN pmt.employee ON teams.team_id = employee.team_id WHERE teams.status !='SUSPEND' AND teams.team_id=? GROUP BY  teams.team_id";
         ResultSet resultSet = CrudUtil.execute(sql, teamId);
 
         if (resultSet.next()) {
@@ -82,9 +84,69 @@ public class TeamModel {
                     resultSet.getInt("team_id"),
                     resultSet.getString("name"),
                     resultSet.getString("description"),
-                    resultSet.getString("status")
+                    resultSet.getString("status"),
+                    resultSet.getInt("EmployeeCount")
             );
         }
         return null;
+    }
+
+    public boolean addTeamToEmployee(int employeeId, int teamId) throws SQLException, ClassNotFoundException {
+        Connection conn = DbConnector.getInstance().getConnection();
+        conn.setAutoCommit(false);
+        try{
+
+            ResultSet result = CrudUtil.execute("SELECT * FROM employee WHERE employee_id=? AND team_id=?", employeeId,teamId);
+            if (result.next()) {
+                conn.rollback();
+                throw new RuntimeException("Team already assigned to this employee.");
+            }
+
+            String sql = "UPDATE employee SET team_id=? WHERE employee_id=?";
+            boolean isUpdated = CrudUtil.execute(sql, teamId,employeeId);
+
+            if (isUpdated) {
+                conn.commit();
+                return true;
+            } else {
+                conn.rollback();
+                return false;
+            }
+        } catch (Exception e) {
+            conn.rollback();
+            throw new RuntimeException(e);
+        } finally {
+            conn.setAutoCommit(true);
+        }
+    }
+
+    public boolean removeTeamToEmployee(int employeeId, int teamId) throws SQLException, ClassNotFoundException {
+        Connection conn = DbConnector.getInstance().getConnection();
+        conn.setAutoCommit(false);
+        try{
+
+            ResultSet result = CrudUtil.execute("SELECT * FROM employee WHERE employee_id=? AND team_id=?", employeeId,teamId);
+            if (!result.next()) {
+                conn.rollback();
+                throw new RuntimeException("Team not assigned to this employee.");
+            }
+
+
+            String sql = "UPDATE employee SET team_id=null WHERE employee_id=?";
+            boolean isUpdated = CrudUtil.execute(sql, employeeId);
+
+            if (isUpdated) {
+                conn.commit();
+                return true;
+            } else {
+                conn.rollback();
+                return false;
+            }
+        } catch (Exception e) {
+            conn.rollback();
+            throw new RuntimeException(e);
+        } finally {
+            conn.setAutoCommit(true);
+        }
     }
 } 

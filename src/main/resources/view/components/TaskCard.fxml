@@ -10,7 +10,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="cardContainer" spacing="16" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.TaskCardController" onMouseClicked="#cardClicked">
+<VBox fx:id="cardContainer" spacing="16" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.task.TaskCardController" onMouseClicked="#cardClicked">
    <children>
       <Label fx:id="categoryLabel" style="-fx-background-color: #3B82F6; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 6 12; -fx-font-size: 12px; -fx-font-weight: bold;" text="Category" />
       <Label fx:id="projectNameLabel" style="-fx-font-size: 13px; -fx-text-fill: #3B82F6; -fx-font-weight: bold;" text="Project Name" />

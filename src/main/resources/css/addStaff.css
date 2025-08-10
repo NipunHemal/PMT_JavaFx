@@ -124,7 +124,7 @@
     -fx-border-width: 1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
-    -fx-padding: 12 15 12 15;
+    -fx-padding: 2 15 2 15;
     -fx-font-size: 14px;
     -fx-text-fill: #2C3E50;
     -fx-prompt-text-fill: #95A5A6;
@@ -150,7 +150,7 @@
     -fx-border-width: 1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
-    -fx-padding: 12 15 12 15;
+    -fx-padding: 5 15 5 15;
     -fx-font-size: 14px;
     -fx-text-fill: #2C3E50;
     -fx-prompt-text-fill: #95A5A6;

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
@@ -10,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox alignment="CENTER" styleClass="project-card" stylesheets="@../../css/staff-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.StaffCardController">
+<VBox alignment="CENTER" styleClass="project-card" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.employee.StaffCardController">
    <children>
       <StackPane styleClass="card-icon-container pink-bg">
          <children>
@@ -66,5 +69,30 @@
             <ProgressBar fx:id="progressBar" prefWidth="180.0" progress="0.47" styleClass="custom-progress-bar" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <JFXButton onAction="#btnChangeStatusOnAction" text="♻">
+               <styleClass>
+                  <String fx:value="badge" />
+                  <String fx:value="success" />
+                  <String fx:value="rounded-full" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton onAction="#removeUserOnAction" text="🗑">
+               <styleClass>
+                  <String fx:value="badge" />
+                  <String fx:value="danger" />
+                  <String fx:value="rounded-full" />
+               </styleClass>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
    </children>
+   <stylesheets>
+      <URL value="@../../css/staff-style.css" />
+      <URL value="@../../css/main.css" />
+   </stylesheets>
 </VBox>

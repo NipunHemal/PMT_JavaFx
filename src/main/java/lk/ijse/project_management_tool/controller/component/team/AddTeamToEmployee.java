@@ -1,4 +1,4 @@
-package lk.ijse.project_management_tool.controller.component;
+package lk.ijse.project_management_tool.controller.component.team;
 
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
@@ -64,6 +64,8 @@ public class AddTeamToEmployee implements Initializable {
 
     public void save(){
         EmployeeDto employeeDto = combEmployee.getValue() != null ? (EmployeeDto) combEmployee.getValue() : null;//combTeam.getValue().toString();
+
+
 
         String employeeId = employeeDto.getEmployeeId() != null ? employeeDto.getEmployeeId().toString() : "";
 

@@ -27,7 +27,7 @@
                         <!-- All Projects -->
                         <VBox alignment="CENTER" spacing="5.0">
                            <children>
-                              <Label text="45" textFill="#3498db">
+                              <Label fx:id="labAllCount" text="45" textFill="#3498db">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -43,7 +43,7 @@
                         <!-- In Progress -->
                         <VBox alignment="CENTER" spacing="5.0">
                            <children>
-                              <Label text="19" textFill="#e67e22">
+                              <Label fx:id="labInProgressCount" text="19" textFill="#e67e22">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -59,12 +59,12 @@
                         <!-- Upcoming -->
                         <VBox alignment="CENTER" spacing="5.0">
                            <children>
-                              <Label text="13" textFill="#f39c12">
+                              <Label fx:id="labCompletedCount" text="13" textFill="#f39c12">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Label text="Upcoming" textFill="#7f8c8d">
+                              <Label text="COMPLETED" textFill="#7f8c8d">
                                  <font>
                                     <Font size="12.0" />
                                  </font>
@@ -75,12 +75,26 @@
                         <!-- Total Project -->
                         <VBox alignment="CENTER" spacing="5.0">
                            <children>
-                              <Label text="32" textFill="#1abc9c">
+                              <Label fx:id="labOnHoldCount" text="32" textFill="#1abc9c">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <Label text="Total Project" textFill="#7f8c8d">
+                              <Label text="ON HOLD" textFill="#7f8c8d">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label fx:id="labCancelledCount" text="32" textFill="#1abc9c">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="CANCELLED" textFill="#7f8c8d">
                                  <font>
                                     <Font size="12.0" />
                                  </font>

@@ -17,7 +17,7 @@
 
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<VBox fillWidth="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.team.AddTeamToEmployee">
+<VBox fillWidth="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.project_management_tool.controller.component.project.AddProjectToTeamController">
     <children>
 
         <!-- Main Content -->

@@ -1,4 +1,4 @@
-package lk.ijse.project_management_tool.controller.component;
+package lk.ijse.project_management_tool.controller.component.project;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
